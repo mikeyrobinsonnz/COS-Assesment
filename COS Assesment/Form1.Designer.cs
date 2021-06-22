@@ -71,6 +71,7 @@ namespace COS_Assesment
             this.PicDice.Size = new System.Drawing.Size(107, 104);
             this.PicDice.TabIndex = 1;
             this.PicDice.TabStop = false;
+            
             // 
             // PicHeader
             // 
@@ -86,7 +87,7 @@ namespace COS_Assesment
             // 
             this.btnRoll.BackColor = System.Drawing.Color.Chartreuse;
             this.btnRoll.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoll.Location = new System.Drawing.Point(698, 465);
+            this.btnRoll.Location = new System.Drawing.Point(700, 466);
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(183, 42);
             this.btnRoll.TabIndex = 3;
