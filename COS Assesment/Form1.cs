@@ -16,25 +16,11 @@ namespace COS_Assesment
         int Roll = 0;
         Random rollRnd = new Random();
 
-        int currentPlace = 1;
-
-        Image dice1 = Image.FromFile(Application.StartupPath + @"\dice1.jpg");
-        Image dice2 = Image.FromFile(Application.StartupPath + @"\dice2.jpg");
-        Image dice3 = Image.FromFile(Application.StartupPath + @"\dice3.jpg");
-        Image dice4 = Image.FromFile(Application.StartupPath + @"\dice4.jpg");
-        Image dice5 = Image.FromFile(Application.StartupPath + @"\dice5.jpg");
-        Image dice6 = Image.FromFile(Application.StartupPath + @"\dice6.jpg");
-
-        const int squareWidth = 60; // change to pnlwidth/10 later
-        const int squareHeight = 60;
-
 
         public Form1()
         {
             InitializeComponent();
         }
-
-
 
         private void mainPnl_Paint(object sender, PaintEventArgs e)
         {
@@ -47,42 +33,26 @@ namespace COS_Assesment
 
             if (Roll == 1)
             {
-                PicDice.BackgroundImage = dice1;
+
             }
             else if (Roll == 2)
             {
-                PicDice.BackgroundImage = dice2;
+
             }
             else if (Roll == 3)
             {
-                PicDice.BackgroundImage = dice3;
+
             }
             else if (Roll == 4)
             {
-                PicDice.BackgroundImage = dice4;
+
             }
             else if (Roll == 5)
             {
-                PicDice.BackgroundImage = dice5;
+
             }
-            else if (Roll == 6)
-            {
-                PicDice.BackgroundImage = dice6;
-            }
+            else if (Roll == 6);
 
-            movePiece(Roll);
-        }
-
-        public void movePiece(int Roll)
-        {
-            int x = piece1.Location.X;
-            int y = piece1.Location.Y;
-
-            currentPlace += Roll;
-
-            x = currentPlace * squareWidth;
-
-            piece1.Location = (x, y);
         }
     }
 
