@@ -56,7 +56,7 @@ namespace COS_Assesment
             this.piece1.BackColor = System.Drawing.Color.Transparent;
             this.piece1.BackgroundImage = global::COS_Assesment.Properties.Resources.piece1;
             this.piece1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.piece1.Location = new System.Drawing.Point(29, 538);
+            this.piece1.Location = new System.Drawing.Point(27, 537);
             this.piece1.Name = "piece1";
             this.piece1.Size = new System.Drawing.Size(27, 50);
             this.piece1.TabIndex = 3;

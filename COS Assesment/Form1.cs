@@ -25,9 +25,14 @@ namespace COS_Assesment
         Image dice5 = Image.FromFile(Application.StartupPath + @"\dice5.jpg");
         Image dice6 = Image.FromFile(Application.StartupPath + @"\dice6.jpg");
 
-        const int squareWidth = 60; // change to pnlwidth/10 later
+        const int squareWidth = 54; // change to pnlwidth/10 later
         const int squareHeight = 60;
 
+        int x;
+        int y;
+        int square = 1; // square num of player
+
+        //public delegate int p (int x, int y);
 
         public Form1()
         {
@@ -75,14 +80,20 @@ namespace COS_Assesment
 
         public void movePiece(int Roll)
         {
+            square += Roll;
             int x = piece1.Location.X;
+            currentPlace = piece1.Location.X;
             int y = piece1.Location.Y;
 
             currentPlace += Roll;
 
-            x = currentPlace * squareWidth;
+            x = square * squareWidth;
 
-            piece1.Location = (x, y);
+            Point Point = new Point(x, y);
+
+            // if square is between 1-10, 21-30 etc
+            // else if between 11-20, 31-40 etc
+            piece1.Location = Point;
         }
     }
 
