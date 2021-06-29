@@ -30,6 +30,7 @@ namespace COS_Assesment
 
         int x;
         int y;
+        int xpos = 1; // numbered square on x
         int square = 1; // square num of player
 
         //public delegate int p (int x, int y);
@@ -49,6 +50,11 @@ namespace COS_Assesment
         private void btnRoll_Click(object sender, EventArgs e)
         {
             Roll = rollRnd.Next(1, 7);
+
+            for (int i = 0; i < Roll; i++)
+            {
+                MoveOne();
+            }
 
             if (Roll == 1)
             {
@@ -75,24 +81,64 @@ namespace COS_Assesment
                 PicDice.BackgroundImage = dice6;
             }
 
-            movePiece(Roll);
+            //movePiece(Roll);
         }
 
         public void movePiece(int Roll)
         {
             square += Roll;
             int x = piece1.Location.X;
-            currentPlace = piece1.Location.X;
+            //currentPlace = piece1.Location.X;
+            int y = piece1.Location.Y;
+            //  currentPlace = piece1.Location.Y;
+
+            //currentPlace += Roll;
+
+
+
+
+            if (square < 10)
+            {
+                x += square * squareWidth;
+
+            }
+
+            else if (square >= 10 && square <= 20)
+            {
+                x -= square * squareWidth;
+            }
+                y -= 60;
+                //currentPlace -= Roll*2;
+                //x = currentPlace;
+            
+            // else if between 11-20, 31-40 etc
+
+
+        }
+
+        private void MoveOne()
+        {
+            square += 1;
+            int x = piece1.Location.X;
             int y = piece1.Location.Y;
 
-            currentPlace += Roll;
+            if (square % 10 == 0)
+            {
+                y -= 60;
+            }
 
-            x = square * squareWidth;
+            if (square < 10)
+            {
+                x = square * squareWidth;
+            }
+
+            else if (square >= 10 && square <= 20)
+            {
+                x = square * squareWidth;
+            }
 
             Point Point = new Point(x, y);
 
-            // if square is between 1-10, 21-30 etc
-            // else if between 11-20, 31-40 etc
             piece1.Location = Point;
         }
     }
