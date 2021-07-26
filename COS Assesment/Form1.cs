@@ -13,6 +13,7 @@ namespace COS_Assesment
 {
     public partial class Form1 : Form
     {
+        int[] pos = new int[100];
         int Roll = 0;
         Random rollRnd = new Random();
 
@@ -107,10 +108,10 @@ namespace COS_Assesment
             {
                 x -= square * squareWidth;
             }
-                y -= 60;
-                //currentPlace -= Roll*2;
-                //x = currentPlace;
-            
+            y -= 60;
+            //currentPlace -= Roll*2;
+            //x = currentPlace;
+
             // else if between 11-20, 31-40 etc
 
 
@@ -119,6 +120,7 @@ namespace COS_Assesment
         private void MoveOne()
         {
             square += 1;
+           
             int x = piece1.Location.X;
             int y = piece1.Location.Y;
 
@@ -134,13 +136,28 @@ namespace COS_Assesment
 
             else if (square >= 10 && square <= 20)
             {
-                x = square * squareWidth;
+                
+                x = (square % 10) * squareWidth;
+                
             }
 
             Point Point = new Point(x, y);
 
             piece1.Location = Point;
+            
+            //private void snakeheads()
+
+            {
+                pos[43] =- 17;
+                pos[50] =- 5;
+                pos[56] =- 8;
+                pos[84] =- 58;
+                pos[87] =- 49;
+                pos[98] =- 40;
+            }        
         }
     }
 
 }
+
+
