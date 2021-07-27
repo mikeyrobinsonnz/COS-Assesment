@@ -16,8 +16,9 @@ namespace COS_Assesment
         int[] pos = new int[100];
         int Roll = 0;
         Random rollRnd = new Random();
-
+        int snakeheads;
         int currentPlace = 1;
+        //const int pnlwidth = 600;
 
         Image dice1 = Image.FromFile(Application.StartupPath + @"\dice1.jpg");
         Image dice2 = Image.FromFile(Application.StartupPath + @"\dice2.jpg");
@@ -26,13 +27,13 @@ namespace COS_Assesment
         Image dice5 = Image.FromFile(Application.StartupPath + @"\dice5.jpg");
         Image dice6 = Image.FromFile(Application.StartupPath + @"\dice6.jpg");
 
-        const int squareWidth = 54; // change to pnlwidth/10 later
+        const int squareWidth = 60;
         const int squareHeight = 60;
 
         int x;
         int y;
         int xpos = 1; // numbered square on x
-        int square = 1; // square num of player
+        int square = 0; // square num of player
 
         //public delegate int p (int x, int y);
 
@@ -98,7 +99,7 @@ namespace COS_Assesment
 
 
 
-            if (square < 10)
+            if (square > 10)
             {
                 x += square * squareWidth;
 
@@ -106,7 +107,7 @@ namespace COS_Assesment
 
             else if (square >= 10 && square <= 20)
             {
-                x -= square * squareWidth;
+                x = square * squareWidth;
             }
             y -= 60;
             //currentPlace -= Roll*2;
@@ -129,7 +130,7 @@ namespace COS_Assesment
                 y -= 60;
             }
 
-            if (square < 10)
+            if (square <= 10)
             {
                 x = square * squareWidth;
             }
@@ -140,12 +141,55 @@ namespace COS_Assesment
                 x = (square % 10) * squareWidth;
                 
             }
+            else if (square >= 20 && square <= 30)
+            {
+
+                x = (square % 10) * squareWidth;
+
+            }
+            else if (square >= 30 && square <= 40)
+            {
+
+                x = (square % 10) * squareWidth;
+
+            }
+            else if (square >= 40 && square <= 50)
+            {
+
+                x = (square % 10) * squareWidth;
+
+            }
+            else if (square >= 60 && square <= 70)
+            {
+
+                x = (square % 10) * squareWidth;
+
+            }
+            else if (square >= 70 && square <= 80)
+            {
+
+                x = (square % 10) * squareWidth;
+
+            }
+            else if (square >= 80 && square <= 90)
+            {
+
+                x = (square % 10) * squareWidth;
+
+            }
+            else if (square >= 90 && square <= 100)
+            {
+
+                x = (square % 10) * squareWidth;
+
+            }
+
 
             Point Point = new Point(x, y);
 
             piece1.Location = Point;
             
-            //private void snakeheads()
+            void snakeheads()
 
             {
                 pos[43] =- 17;

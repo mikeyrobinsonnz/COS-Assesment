@@ -29,58 +29,16 @@ namespace COS_Assesment
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnRoll = new System.Windows.Forms.Button();
+            this.PicHeader = new System.Windows.Forms.PictureBox();
+            this.PicDice = new System.Windows.Forms.PictureBox();
             this.mainPnl = new System.Windows.Forms.Panel();
             this.piece1 = new System.Windows.Forms.PictureBox();
-            this.PicDice = new System.Windows.Forms.PictureBox();
-            this.PicHeader = new System.Windows.Forms.PictureBox();
-            this.btnRoll = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.PicHeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicDice)).BeginInit();
             this.mainPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piece1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicDice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicHeader)).BeginInit();
             this.SuspendLayout();
-            // 
-            // mainPnl
-            // 
-            this.mainPnl.BackgroundImage = global::COS_Assesment.Properties.Resources.board_image;
-            this.mainPnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.mainPnl.Controls.Add(this.piece1);
-            this.mainPnl.Location = new System.Drawing.Point(12, 12);
-            this.mainPnl.Name = "mainPnl";
-            this.mainPnl.Size = new System.Drawing.Size(600, 600);
-            this.mainPnl.TabIndex = 0;
-            this.mainPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPnl_Paint);
-            // 
-            // piece1
-            // 
-            this.piece1.BackColor = System.Drawing.Color.Transparent;
-            this.piece1.BackgroundImage = global::COS_Assesment.Properties.Resources.piece1;
-            this.piece1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.piece1.Location = new System.Drawing.Point(27, 537);
-            this.piece1.Name = "piece1";
-            this.piece1.Size = new System.Drawing.Size(27, 50);
-            this.piece1.TabIndex = 3;
-            this.piece1.TabStop = false;
-            // 
-            // PicDice
-            // 
-            this.PicDice.BackgroundImage = global::COS_Assesment.Properties.Resources.dice1;
-            this.PicDice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PicDice.Location = new System.Drawing.Point(730, 274);
-            this.PicDice.Name = "PicDice";
-            this.PicDice.Size = new System.Drawing.Size(107, 104);
-            this.PicDice.TabIndex = 1;
-            this.PicDice.TabStop = false;
-            // 
-            // PicHeader
-            // 
-            this.PicHeader.BackgroundImage = global::COS_Assesment.Properties.Resources.header;
-            this.PicHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PicHeader.Location = new System.Drawing.Point(660, 12);
-            this.PicHeader.Name = "PicHeader";
-            this.PicHeader.Size = new System.Drawing.Size(250, 153);
-            this.PicHeader.TabIndex = 2;
-            this.PicHeader.TabStop = false;
             // 
             // btnRoll
             // 
@@ -94,6 +52,48 @@ namespace COS_Assesment
             this.btnRoll.UseVisualStyleBackColor = false;
             this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
             // 
+            // PicHeader
+            // 
+            this.PicHeader.BackgroundImage = global::COS_Assesment.Properties.Resources.header;
+            this.PicHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PicHeader.Location = new System.Drawing.Point(660, 12);
+            this.PicHeader.Name = "PicHeader";
+            this.PicHeader.Size = new System.Drawing.Size(250, 153);
+            this.PicHeader.TabIndex = 2;
+            this.PicHeader.TabStop = false;
+            // 
+            // PicDice
+            // 
+            this.PicDice.BackgroundImage = global::COS_Assesment.Properties.Resources.dice1;
+            this.PicDice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PicDice.Location = new System.Drawing.Point(730, 274);
+            this.PicDice.Name = "PicDice";
+            this.PicDice.Size = new System.Drawing.Size(107, 104);
+            this.PicDice.TabIndex = 1;
+            this.PicDice.TabStop = false;
+            // 
+            // mainPnl
+            // 
+            this.mainPnl.BackgroundImage = global::COS_Assesment.Properties.Resources.board_image1;
+            this.mainPnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainPnl.Controls.Add(this.piece1);
+            this.mainPnl.Location = new System.Drawing.Point(12, 12);
+            this.mainPnl.Name = "mainPnl";
+            this.mainPnl.Size = new System.Drawing.Size(600, 600);
+            this.mainPnl.TabIndex = 0;
+            this.mainPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPnl_Paint);
+            // 
+            // piece1
+            // 
+            this.piece1.BackColor = System.Drawing.Color.Transparent;
+            this.piece1.BackgroundImage = global::COS_Assesment.Properties.Resources.piece1;
+            this.piece1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.piece1.Location = new System.Drawing.Point(3, 555);
+            this.piece1.Name = "piece1";
+            this.piece1.Size = new System.Drawing.Size(30, 30);
+            this.piece1.TabIndex = 3;
+            this.piece1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,10 +106,10 @@ namespace COS_Assesment
             this.Controls.Add(this.mainPnl);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.PicHeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicDice)).EndInit();
             this.mainPnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.piece1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicDice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicHeader)).EndInit();
             this.ResumeLayout(false);
 
         }
