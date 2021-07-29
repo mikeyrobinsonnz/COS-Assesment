@@ -14,9 +14,12 @@ namespace COS_Assesment
     public partial class Form1 : Form
     {
         int[] pos = new int[100];
+        int p = 1;
         int Roll = 0;
         Random rollRnd = new Random();
         int snakeheads;
+        int ladders;
+        int num = 1;
         int currentPlace = 1;
         //const int pnlwidth = 600;
 
@@ -121,7 +124,8 @@ namespace COS_Assesment
         private void MoveOne()
         {
             square += 1;
-           
+            num += 1;
+
             int x = piece1.Location.X;
             int y = piece1.Location.Y;
 
@@ -137,9 +141,9 @@ namespace COS_Assesment
 
             else if (square >= 10 && square <= 20)
             {
-                
+
                 x = (square % 10) * squareWidth;
-                
+
             }
             else if (square >= 20 && square <= 30)
             {
@@ -154,6 +158,12 @@ namespace COS_Assesment
 
             }
             else if (square >= 40 && square <= 50)
+            {
+
+                x = (square % 10) * squareWidth;
+
+            }
+            else if (square >= 50 && square <= 60)
             {
 
                 x = (square % 10) * squareWidth;
@@ -188,20 +198,66 @@ namespace COS_Assesment
             Point Point = new Point(x, y);
 
             piece1.Location = Point;
-            
-            void snakeheads()
 
-            {
-                pos[43] =- 17;
-                pos[50] =- 5;
-                pos[56] =- 8;
-                pos[84] =- 58;
-                pos[87] =- 49;
-                pos[98] =- 40;
-            }        
+                if (num == 43)
+                {
+                    num = 17;
+                }
+                else if (num == 50)
+                {
+                    num = 5;
+                }
+                else if (num == 56)
+                {
+                    num = 8;
+                }
+                else if (num == 84)
+                {
+                    num = 58;
+                }
+                else if (num == 87)
+                {
+                    num = 49;
+                }
+                else if (num == 98)
+                {
+                    num = 40;
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //void snakeheads(int Roll)
+
+            //{
+            //pos[p] = 1;
+                //int[] moves = new int[N];
+                //for (int i = 0; i < N; i++)
+                    //moves[i] = -1;
+
+
+               // pos[43] =- 17;
+               // pos[50] =- 5;
+               // pos[56] =- 8;
+               // pos[84] =- 58;
+               // pos[87] =- 49;
+               // pos[98] =- 40;
+            //}        
         }
     }
 
-}
 
 
