@@ -60,6 +60,7 @@ namespace COS_Assesment
             for (int i = 0; i < Roll; i++)
             {
                 MoveOne();
+                Snakeheads();
             }
 
             if (Roll == 1)
@@ -93,6 +94,7 @@ namespace COS_Assesment
         public void movePiece(int Roll)
         {
             square += Roll;
+       
             int x = piece1.Location.X;
             //currentPlace = piece1.Location.X;
             int y = piece1.Location.Y;
@@ -126,6 +128,7 @@ namespace COS_Assesment
         {
             square += 1;
             num += 1;
+            p += 1;
 
             int x = piece1.Location.X;
             int y = piece1.Location.Y;
@@ -208,21 +211,31 @@ namespace COS_Assesment
                 int y = piece1.Location.Y;
                 Point Point = new Point(x, y);
                 piece1.Location = Point;
-                pos[p] = 1; 
+                 
                 
                 if (p == 25)
                 {
                     x = 250;
                     y = 550;
-                    p = 5;
-
-                piece1.Location = new Point(x, y);
+                    p++;
+                }
+                else if (p == 34)
+                {
+                x = 3;
+                y = 550;
+                p++;
+                }
+                else if (p == 47)
+                {
+                x = 480;
+                y = 490;
+                p++;
                 }
 
+            piece1.Location = new Point(x, y);
 
-                
 
-            }
+        }
 
 
 
