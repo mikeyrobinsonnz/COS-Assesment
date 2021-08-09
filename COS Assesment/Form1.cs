@@ -33,7 +33,7 @@ namespace COS_Assesment
         const int squareWidth = 60;
         const int squareHeight = 60;
 
-        int p;
+        int p = 1;
         int x;
         int y;
         int xpos = 1; // numbered square on x
@@ -60,7 +60,6 @@ namespace COS_Assesment
             for (int i = 0; i < Roll; i++)
             {
                 MoveOne();
-                Snakeheads();
             }
 
             if (Roll == 1)
@@ -87,49 +86,19 @@ namespace COS_Assesment
             {
                 PicDice.BackgroundImage = dice6;
             }
-
-            //movePiece(Roll);
+            Snakeheads(Roll);
+            
+            
         }
 
-        public void movePiece(int Roll)
-        {
-            square += Roll;
-       
-            int x = piece1.Location.X;
-            //currentPlace = piece1.Location.X;
-            int y = piece1.Location.Y;
-            //  currentPlace = piece1.Location.Y;
-
-            //currentPlace += Roll;
-
-
-
-
-            if (square > 10)
-            {
-                x += square * squareWidth;
-
-            }
-
-            else if (square >= 10 && square <= 20)
-            {
-                x = square * squareWidth;
-            }
-            y -= 60;
-            //currentPlace -= Roll*2;
-            //x = currentPlace;
-
-            // else if between 11-20, 31-40 etc
-
-
-        }
+        
 
         private void MoveOne()
         {
             square += 1;
             num += 1;
             p += 1;
-
+           
             int x = piece1.Location.X;
             int y = piece1.Location.Y;
 
@@ -200,11 +169,11 @@ namespace COS_Assesment
 
 
             Point Point = new Point(x, y);
-
             piece1.Location = Point;
+            
 
         } //--------------------------------------------------------------------snakes-----------------------------------------------------------------------------//
-              private void Snakeheads()
+            private void Snakeheads(int Roll)
             {
 
                 int x = piece1.Location.X;
@@ -217,23 +186,56 @@ namespace COS_Assesment
                 {
                     x = 250;
                     y = 550;
-                    p++;
-                }
+                    p = 5;
+                    
+                   
+            }
                 else if (p == 34)
                 {
-                x = 3;
-                y = 550;
-                p++;
+                    x = 3;
+                    y = 550;
+                    p = 1;
+                    
                 }
                 else if (p == 47)
                 {
-                x = 480;
-                y = 490;
-                p++;
+                    x = 480;
+                    y = 490;
+                    p = 19;
+                    
                 }
+                else if (p == 65)
+                {
+                    x = 70;
+                    y = 260;
+                    p = 52;
 
+                }
+                else if (p == 87)
+                {
+                    x = 370;
+                    y = 260;
+                    p = 57;
+
+                }
+                else if (p == 91)
+                {
+                    x = 10;
+                    y = 200;
+                    p = 61;
+
+                }
+                else if (p == 99)
+                {
+                    x = 490;
+                    y = 190;
+                    p = 69;
+
+                }
             piece1.Location = new Point(x, y);
 
+            
+           
 
         }
 
