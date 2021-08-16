@@ -18,7 +18,7 @@ namespace COS_Assesment
         int snakeheads;
         int ladders;
         int num = 1;
-        int[] pos; 
+        int[] pos;
 
         int currentPlace = 1;
         //const int pnlwidth = 600;
@@ -44,14 +44,14 @@ namespace COS_Assesment
         public Form1()
         {
             InitializeComponent();
+            
         }
 
 
 
         private void mainPnl_Paint(object sender, PaintEventArgs e)
         {
-
-        }
+            
 
         private void btnRoll_Click(object sender, EventArgs e)
         {
@@ -60,6 +60,7 @@ namespace COS_Assesment
             for (int i = 0; i < Roll; i++)
             {
                 MoveOne();
+
             }
 
             if (Roll == 1)
@@ -86,19 +87,20 @@ namespace COS_Assesment
             {
                 PicDice.BackgroundImage = dice6;
             }
+
             Snakeheads(Roll);
-            
-            
+            Ladders(Roll);
+
         }
 
-        
+
 
         private void MoveOne()
         {
-            square += 1;
             num += 1;
             p += 1;
-           
+            square = p - 1;
+
             int x = piece1.Location.X;
             int y = piece1.Location.Y;
 
@@ -170,81 +172,164 @@ namespace COS_Assesment
 
             Point Point = new Point(x, y);
             piece1.Location = Point;
-            
+
 
         } //--------------------------------------------------------------------snakes-----------------------------------------------------------------------------//
-            private void Snakeheads(int Roll)
+        private void Snakeheads(int Roll)
+        {
+
+            int x = piece1.Location.X;
+            int y = piece1.Location.Y;
+            Point Point = new Point(x, y);
+            piece1.Location = Point;
+
+
+            if (p == 25)
             {
+                x = 250;
+                y = 550;
+                p = 5;
 
-                int x = piece1.Location.X;
-                int y = piece1.Location.Y;
-                Point Point = new Point(x, y);
-                piece1.Location = Point;
-                 
-                
-                if (p == 25)
-                {
-                    x = 250;
-                    y = 550;
-                    p = 5;
-                    
-                   
+
             }
-                else if (p == 34)
-                {
-                    x = 3;
-                    y = 550;
-                    p = 1;
-                    
-                }
-                else if (p == 47)
-                {
-                    x = 480;
-                    y = 490;
-                    p = 19;
-                    
-                }
-                else if (p == 65)
-                {
-                    x = 70;
-                    y = 260;
-                    p = 52;
+            else if (p == 34)
+            {
+                x = 3;
+                y = 550;
+                p = 1;
 
-                }
-                else if (p == 87)
-                {
-                    x = 370;
-                    y = 260;
-                    p = 57;
+            }
+            else if (p == 47)
+            {
+                x = 480;
+                y = 490;
+                p = 19;
 
-                }
-                else if (p == 91)
-                {
-                    x = 10;
-                    y = 200;
-                    p = 61;
+            }
+            else if (p == 65)
+            {
+                x = 70;
+                y = 260;
+                p = 52;
 
-                }
-                else if (p == 99)
-                {
-                    x = 490;
-                    y = 190;
-                    p = 69;
+            }
+            else if (p == 87)
+            {
+                x = 370;
+                y = 260;
+                p = 57;
 
-                }
+            }
+            else if (p == 91)
+            {
+                x = 10;
+                y = 200;
+                p = 61;
+
+            }
+            else if (p == 99)
+            {
+                x = 490;
+                y = 190;
+                p = 69;
+
+            }
             piece1.Location = new Point(x, y);
 
-            
+
+
+
+        }
+
+        private void Ladders(int Roll)
+        {
+
+            int x = piece1.Location.X;
+            int y = piece1.Location.Y;
+            Point Point = new Point(x, y);
+            piece1.Location = Point;
+
+            if (p == 3)
+            {
+                x = 3;
+                y = 260;
+                p = 51;
+
+            }
+            else if (p == 6)
+            {
+                x = 370;
+                y = 440;
+                p = 27;
+
+
+            }
+            else if (p == 20)
+            {
+                x = 550;
+                y = 200;
+                p = 70;
+
+            }
+            else if (p == 36)
+            {
+                x = 260;
+                y = 260;
+                p = 55;
+
+            }
            
+            else if (p == 63)
+            {
+                x = 250;
+                y = 20;
+                p = 95;
+
+            }
+            else if (p == 68)
+            {
+                x = 420;
+                y = 20;
+                p = 98;
+
+            }
+            else if(p == 100)
+            {
+
+                MessageBox.Show("Congratulations! You Win!");
+                
+
+            }
+            else if (p > 100)
+            {
+
+                MessageBox.Show("cannot move");
+                
+
+            }
+            piece1.Location = new Point(x, y);
+
+
+
 
         }
 
-
-
-
+        //private void TimerGame_Tick(object sender, EventArgs e)
+        {
 
         }
+
+        //-------------------------------------------------------------------------Ladders------------------------------------------------------------------------------------------//
+
+
+
+
     }
+}
+
+
+
+
 
 
 

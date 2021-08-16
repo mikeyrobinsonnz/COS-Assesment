@@ -29,11 +29,13 @@ namespace COS_Assesment
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnRoll = new System.Windows.Forms.Button();
             this.PicHeader = new System.Windows.Forms.PictureBox();
             this.PicDice = new System.Windows.Forms.PictureBox();
             this.mainPnl = new System.Windows.Forms.Panel();
             this.piece1 = new System.Windows.Forms.PictureBox();
+            this.TimerGame = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PicHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice)).BeginInit();
             this.mainPnl.SuspendLayout();
@@ -94,6 +96,11 @@ namespace COS_Assesment
             this.piece1.TabIndex = 3;
             this.piece1.TabStop = false;
             // 
+            // TimerGame
+            // 
+            this.TimerGame.Enabled = true;
+            this.TimerGame.Tick += new System.EventHandler(this.TimerGame_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,6 +128,7 @@ namespace COS_Assesment
         private System.Windows.Forms.PictureBox PicDice;
         private System.Windows.Forms.PictureBox PicHeader;
         private System.Windows.Forms.Button btnRoll;
+        private System.Windows.Forms.Timer TimerGame;
     }
 }
 
