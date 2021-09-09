@@ -99,7 +99,6 @@ namespace COS_Assesment
             // TimerGame
             // 
             this.TimerGame.Enabled = true;
-            this.TimerGame.Tick += new System.EventHandler(this.TimerGame_Tick);
             // 
             // Form1
             // 

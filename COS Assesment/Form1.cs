@@ -51,7 +51,7 @@ namespace COS_Assesment
 
         private void mainPnl_Paint(object sender, PaintEventArgs e)
         {
-            
+        }
 
         private void btnRoll_Click(object sender, EventArgs e)
         {
@@ -314,10 +314,6 @@ namespace COS_Assesment
 
         }
 
-        //private void TimerGame_Tick(object sender, EventArgs e)
-        {
-
-        }
 
         //-------------------------------------------------------------------------Ladders------------------------------------------------------------------------------------------//
 
