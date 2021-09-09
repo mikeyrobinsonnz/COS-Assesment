@@ -36,6 +36,8 @@ namespace COS_Assesment
             this.mainPnl = new System.Windows.Forms.Panel();
             this.piece1 = new System.Windows.Forms.PictureBox();
             this.TimerGame = new System.Windows.Forms.Timer(this.components);
+            this.BtnName = new System.Windows.Forms.Button();
+            this.TxtName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PicHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice)).BeginInit();
             this.mainPnl.SuspendLayout();
@@ -46,7 +48,7 @@ namespace COS_Assesment
             // 
             this.btnRoll.BackColor = System.Drawing.Color.Chartreuse;
             this.btnRoll.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoll.Location = new System.Drawing.Point(698, 465);
+            this.btnRoll.Location = new System.Drawing.Point(695, 353);
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(183, 42);
             this.btnRoll.TabIndex = 3;
@@ -68,7 +70,7 @@ namespace COS_Assesment
             // 
             this.PicDice.BackgroundImage = global::COS_Assesment.Properties.Resources.dice1;
             this.PicDice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PicDice.Location = new System.Drawing.Point(730, 274);
+            this.PicDice.Location = new System.Drawing.Point(729, 194);
             this.PicDice.Name = "PicDice";
             this.PicDice.Size = new System.Drawing.Size(107, 104);
             this.PicDice.TabIndex = 1;
@@ -98,7 +100,29 @@ namespace COS_Assesment
             // 
             // TimerGame
             // 
-            this.TimerGame.Enabled = true;
+            this.TimerGame.Interval = 1000;
+            this.TimerGame.Tick += new System.EventHandler(this.TimerGame_Tick);
+            // 
+            // BtnName
+            // 
+            this.BtnName.BackColor = System.Drawing.Color.Chartreuse;
+            this.BtnName.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnName.Location = new System.Drawing.Point(695, 544);
+            this.BtnName.Name = "BtnName";
+            this.BtnName.Size = new System.Drawing.Size(183, 48);
+            this.BtnName.TabIndex = 4;
+            this.BtnName.Text = "Submit";
+            this.BtnName.UseVisualStyleBackColor = false;
+            this.BtnName.Click += new System.EventHandler(this.BtnName_Click);
+            // 
+            // TxtName
+            // 
+            this.TxtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtName.Location = new System.Drawing.Point(695, 476);
+            this.TxtName.Name = "TxtName";
+            this.TxtName.Size = new System.Drawing.Size(183, 31);
+            this.TxtName.TabIndex = 5;
+            this.TxtName.TextChanged += new System.EventHandler(this.TxtName_TextChanged);
             // 
             // Form1
             // 
@@ -106,6 +130,8 @@ namespace COS_Assesment
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(952, 648);
+            this.Controls.Add(this.TxtName);
+            this.Controls.Add(this.BtnName);
             this.Controls.Add(this.btnRoll);
             this.Controls.Add(this.PicHeader);
             this.Controls.Add(this.PicDice);
@@ -117,6 +143,7 @@ namespace COS_Assesment
             this.mainPnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.piece1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -128,6 +155,8 @@ namespace COS_Assesment
         private System.Windows.Forms.PictureBox PicHeader;
         private System.Windows.Forms.Button btnRoll;
         private System.Windows.Forms.Timer TimerGame;
+        private System.Windows.Forms.Button BtnName;
+        private System.Windows.Forms.TextBox TxtName;
     }
 }
 

@@ -20,6 +20,11 @@ namespace COS_Assesment
         int num = 1;
         int[] pos;
 
+        string name = "";
+
+        bool GameStart = false;
+        int seconds = 0;
+
         int currentPlace = 1;
         //const int pnlwidth = 600;
 
@@ -55,6 +60,13 @@ namespace COS_Assesment
 
         private void btnRoll_Click(object sender, EventArgs e)
         {
+
+            if(GameStart == false)
+            {
+                TimerGame.Enabled = true;
+                GameStart = true;
+                TimerGame.Interval = 1000;
+            }
             Roll = rollRnd.Next(1, 7);
 
             for (int i = 0; i < Roll; i++)
@@ -297,7 +309,9 @@ namespace COS_Assesment
             {
 
                 MessageBox.Show("Congratulations! You Win!");
-                
+                TimerGame.Enabled = false;
+                updateHighScores(name, seconds);
+
 
             }
             else if (p > 100)
@@ -312,6 +326,36 @@ namespace COS_Assesment
 
 
 
+        }
+
+        private void TxtName_TextChanged(object sender, EventArgs e)
+        {
+            // sets string text to the bet text box
+            string text = TxtName.Text;
+            // checks for null
+            if (text.Trim() == "") return;
+            for (int i = 0; i < text.Length; i++)
+            {
+                // if not a letter, not let it through
+                if (!char.IsLetter(text[i]))
+                {
+                    MessageBox.Show("Please enter a valid username, one with only letters");
+                    TxtName.Text = "";
+                    return;
+                }
+
+            }
+        }
+
+        private void BtnName_Click(object sender, EventArgs e)
+        {
+            name = TxtName.Text; // set username to the text box's text
+            MessageBox.Show("Username set");
+        }
+
+        private void TimerGame_Tick(object sender, EventArgs e)
+        {
+            seconds++;
         }
 
 
