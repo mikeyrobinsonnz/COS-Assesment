@@ -44,12 +44,13 @@ namespace COS_Assesment
         int xpos = 1; // numbered square on x
         int square = 0; // square num of player
 
+       
         //public delegate int p (int x, int y);
 
         public Form1()
         {
             InitializeComponent();
-            
+            ListBoxHighScores.Visible = false;
         }
 
 
@@ -356,6 +357,30 @@ namespace COS_Assesment
         private void TimerGame_Tick(object sender, EventArgs e)
         {
             seconds++;
+        }
+
+        private void finish_Click(object sender, EventArgs e)
+        {
+            Random debug = new Random();
+            seconds = debug.Next(50, 100);
+            MessageBox.Show("Congratulations! You Win!");
+            TimerGame.Enabled = false;
+            updateHighScores(name, seconds);
+        }
+
+        private void ButtonPause_Click(object sender, EventArgs e)
+        {
+            TimerGame.Enabled = false; // pause timer
+
+            MessageBoxButtons buttons = MessageBoxButtons.OK; // set buttons to OK
+            string msg = "The game is paused. Press OK to unpause the game."; // declare msg string
+            string title = "Paused"; // declare title
+            DialogResult result = MessageBox.Show(msg, title, buttons); // display msg box
+
+            if (result == DialogResult.OK) // if OK pressed, resume
+            {
+                TimerGame.Enabled = true;
+            }
         }
 
 

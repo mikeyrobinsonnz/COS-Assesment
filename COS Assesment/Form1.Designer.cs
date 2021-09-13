@@ -38,6 +38,9 @@ namespace COS_Assesment
             this.TimerGame = new System.Windows.Forms.Timer(this.components);
             this.BtnName = new System.Windows.Forms.Button();
             this.TxtName = new System.Windows.Forms.TextBox();
+            this.finish = new System.Windows.Forms.Button();
+            this.ListBoxHighScores = new System.Windows.Forms.ListBox();
+            this.ButtonPause = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PicHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice)).BeginInit();
             this.mainPnl.SuspendLayout();
@@ -80,6 +83,7 @@ namespace COS_Assesment
             // 
             this.mainPnl.BackgroundImage = global::COS_Assesment.Properties.Resources.board_image1;
             this.mainPnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainPnl.Controls.Add(this.ListBoxHighScores);
             this.mainPnl.Controls.Add(this.piece1);
             this.mainPnl.Location = new System.Drawing.Point(12, 12);
             this.mainPnl.Name = "mainPnl";
@@ -124,12 +128,51 @@ namespace COS_Assesment
             this.TxtName.TabIndex = 5;
             this.TxtName.TextChanged += new System.EventHandler(this.TxtName_TextChanged);
             // 
+            // finish
+            // 
+            this.finish.BackColor = System.Drawing.Color.Transparent;
+            this.finish.Font = new System.Drawing.Font("SimSun", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finish.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.finish.Location = new System.Drawing.Point(73, 647);
+            this.finish.Name = "finish";
+            this.finish.Size = new System.Drawing.Size(123, 36);
+            this.finish.TabIndex = 6;
+            this.finish.Text = "(Debug) Finish Game";
+            this.finish.UseVisualStyleBackColor = false;
+            this.finish.Click += new System.EventHandler(this.finish_Click);
+            // 
+            // ListBoxHighScores
+            // 
+            this.ListBoxHighScores.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ListBoxHighScores.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListBoxHighScores.FormattingEnabled = true;
+            this.ListBoxHighScores.ItemHeight = 16;
+            this.ListBoxHighScores.Location = new System.Drawing.Point(76, 138);
+            this.ListBoxHighScores.Name = "ListBoxHighScores";
+            this.ListBoxHighScores.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ListBoxHighScores.Size = new System.Drawing.Size(411, 292);
+            this.ListBoxHighScores.TabIndex = 4;
+            // 
+            // ButtonPause
+            // 
+            this.ButtonPause.Font = new System.Drawing.Font("SimSun", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPause.ForeColor = System.Drawing.Color.Red;
+            this.ButtonPause.Location = new System.Drawing.Point(444, 647);
+            this.ButtonPause.Name = "ButtonPause";
+            this.ButtonPause.Size = new System.Drawing.Size(123, 36);
+            this.ButtonPause.TabIndex = 7;
+            this.ButtonPause.Text = "Pause Game";
+            this.ButtonPause.UseVisualStyleBackColor = true;
+            this.ButtonPause.Click += new System.EventHandler(this.ButtonPause_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(952, 648);
+            this.ClientSize = new System.Drawing.Size(984, 711);
+            this.Controls.Add(this.ButtonPause);
+            this.Controls.Add(this.finish);
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.BtnName);
             this.Controls.Add(this.btnRoll);
@@ -157,6 +200,9 @@ namespace COS_Assesment
         private System.Windows.Forms.Timer TimerGame;
         private System.Windows.Forms.Button BtnName;
         private System.Windows.Forms.TextBox TxtName;
+        private System.Windows.Forms.Button finish;
+        private System.Windows.Forms.ListBox ListBoxHighScores;
+        private System.Windows.Forms.Button ButtonPause;
     }
 }
 
