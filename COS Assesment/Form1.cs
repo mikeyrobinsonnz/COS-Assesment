@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -44,8 +45,8 @@ namespace COS_Assesment
         int xpos = 1; // numbered square on x
         int square = 0; // square num of player
 
+        bool check = false;
        
-        //public delegate int p (int x, int y);
 
         public Form1()
         {
@@ -61,7 +62,8 @@ namespace COS_Assesment
 
         private void btnRoll_Click(object sender, EventArgs e)
         {
-
+            Thread.Sleep(200); //Roll button has 200ms delay.
+            check = false;
             if(GameStart == false)
             {
                 TimerGame.Enabled = true;
@@ -70,11 +72,6 @@ namespace COS_Assesment
             }
             Roll = rollRnd.Next(1, 7);
 
-            for (int i = 0; i < Roll; i++)
-            {
-                MoveOne();
-
-            }
 
             if (Roll == 1)
             {
@@ -99,6 +96,13 @@ namespace COS_Assesment
             else if (Roll == 6)
             {
                 PicDice.BackgroundImage = dice6;
+            }
+
+            for (int i = 0; i < Roll; i++)
+            {
+
+                MoveOne(); 
+                
             }
 
             Snakeheads(Roll);
@@ -181,7 +185,14 @@ namespace COS_Assesment
                 x = (square % 10) * squareWidth;
 
             }
+            if (p == 100)
+            {
 
+                MessageBox.Show("Congratulations! You Win!");
+                TimerGame.Enabled = false;
+                updateHighScores(name, seconds);
+            }
+            
 
             Point Point = new Point(x, y);
             piece1.Location = Point;
@@ -306,22 +317,6 @@ namespace COS_Assesment
                 p = 98;
 
             }
-            else if(p == 100)
-            {
-
-                MessageBox.Show("Congratulations! You Win!");
-                TimerGame.Enabled = false;
-                updateHighScores(name, seconds);
-
-
-            }
-            else if (p > 100)
-            {
-
-                MessageBox.Show("cannot move");
-                
-
-            }
             piece1.Location = new Point(x, y);
 
 
@@ -382,6 +377,35 @@ namespace COS_Assesment
                 TimerGame.Enabled = true;
             }
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            TimerGame.Enabled = false;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo; // set buttons to OK
+            string msg = "Do you want to exit the game? Your score will NOT be recorded."; // declare msg string
+            string title = "Exit Game?"; // declare title
+            DialogResult result = MessageBox.Show(msg, title, buttons); // display msg box
+
+            if (result == DialogResult.Yes) // if OK pressed, resume
+            {
+                Application.Exit();
+            }
+            else if(result == DialogResult.No)
+            {
+                TimerGame.Enabled = true;
+            }
+
+        }
+
+        private void BtnInstructions_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.OK; // set buttons to OK
+            string title = "Game Instructions"; // declare title
+            string msg = "To Play The Game Type Your Name Into the Box and Click Submit. To Start The Timer Click Roll and Play as Normal , You must reach 100 to Win";
+            DialogResult result = MessageBox.Show(msg, title, buttons); // display msg box
+        }
+
+
 
 
         //-------------------------------------------------------------------------Ladders------------------------------------------------------------------------------------------//

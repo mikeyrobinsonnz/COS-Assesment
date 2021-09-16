@@ -34,13 +34,16 @@ namespace COS_Assesment
             this.PicHeader = new System.Windows.Forms.PictureBox();
             this.PicDice = new System.Windows.Forms.PictureBox();
             this.mainPnl = new System.Windows.Forms.Panel();
+            this.ListBoxHighScores = new System.Windows.Forms.ListBox();
             this.piece1 = new System.Windows.Forms.PictureBox();
             this.TimerGame = new System.Windows.Forms.Timer(this.components);
             this.BtnName = new System.Windows.Forms.Button();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.finish = new System.Windows.Forms.Button();
-            this.ListBoxHighScores = new System.Windows.Forms.ListBox();
             this.ButtonPause = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.BtnInstructions = new System.Windows.Forms.Button();
+            this.LblName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PicHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice)).BeginInit();
             this.mainPnl.SuspendLayout();
@@ -50,12 +53,12 @@ namespace COS_Assesment
             // btnRoll
             // 
             this.btnRoll.BackColor = System.Drawing.Color.Chartreuse;
-            this.btnRoll.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoll.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoll.Location = new System.Drawing.Point(695, 353);
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(183, 42);
             this.btnRoll.TabIndex = 3;
-            this.btnRoll.Text = "ROLL!";
+            this.btnRoll.Text = "Roll";
             this.btnRoll.UseVisualStyleBackColor = false;
             this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
             // 
@@ -91,6 +94,18 @@ namespace COS_Assesment
             this.mainPnl.TabIndex = 0;
             this.mainPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPnl_Paint);
             // 
+            // ListBoxHighScores
+            // 
+            this.ListBoxHighScores.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ListBoxHighScores.Font = new System.Drawing.Font("SimSun-ExtB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListBoxHighScores.FormattingEnabled = true;
+            this.ListBoxHighScores.ItemHeight = 16;
+            this.ListBoxHighScores.Location = new System.Drawing.Point(76, 138);
+            this.ListBoxHighScores.Name = "ListBoxHighScores";
+            this.ListBoxHighScores.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ListBoxHighScores.Size = new System.Drawing.Size(411, 292);
+            this.ListBoxHighScores.TabIndex = 4;
+            // 
             // piece1
             // 
             this.piece1.BackColor = System.Drawing.Color.Transparent;
@@ -110,7 +125,7 @@ namespace COS_Assesment
             // BtnName
             // 
             this.BtnName.BackColor = System.Drawing.Color.Chartreuse;
-            this.BtnName.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnName.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnName.Location = new System.Drawing.Point(695, 544);
             this.BtnName.Name = "BtnName";
             this.BtnName.Size = new System.Drawing.Size(183, 48);
@@ -133,7 +148,7 @@ namespace COS_Assesment
             this.finish.BackColor = System.Drawing.Color.Transparent;
             this.finish.Font = new System.Drawing.Font("SimSun", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.finish.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.finish.Location = new System.Drawing.Point(73, 647);
+            this.finish.Location = new System.Drawing.Point(15, 647);
             this.finish.Name = "finish";
             this.finish.Size = new System.Drawing.Size(123, 36);
             this.finish.TabIndex = 6;
@@ -141,23 +156,11 @@ namespace COS_Assesment
             this.finish.UseVisualStyleBackColor = false;
             this.finish.Click += new System.EventHandler(this.finish_Click);
             // 
-            // ListBoxHighScores
-            // 
-            this.ListBoxHighScores.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ListBoxHighScores.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListBoxHighScores.FormattingEnabled = true;
-            this.ListBoxHighScores.ItemHeight = 16;
-            this.ListBoxHighScores.Location = new System.Drawing.Point(76, 138);
-            this.ListBoxHighScores.Name = "ListBoxHighScores";
-            this.ListBoxHighScores.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ListBoxHighScores.Size = new System.Drawing.Size(411, 292);
-            this.ListBoxHighScores.TabIndex = 4;
-            // 
             // ButtonPause
             // 
-            this.ButtonPause.Font = new System.Drawing.Font("SimSun", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPause.Font = new System.Drawing.Font("SimSun", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonPause.ForeColor = System.Drawing.Color.Red;
-            this.ButtonPause.Location = new System.Drawing.Point(444, 647);
+            this.ButtonPause.Location = new System.Drawing.Point(244, 647);
             this.ButtonPause.Name = "ButtonPause";
             this.ButtonPause.Size = new System.Drawing.Size(123, 36);
             this.ButtonPause.TabIndex = 7;
@@ -165,12 +168,49 @@ namespace COS_Assesment
             this.ButtonPause.UseVisualStyleBackColor = true;
             this.ButtonPause.Click += new System.EventHandler(this.ButtonPause_Click);
             // 
+            // ExitButton
+            // 
+            this.ExitButton.Font = new System.Drawing.Font("SimSun", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.Color.Red;
+            this.ExitButton.Location = new System.Drawing.Point(489, 647);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(123, 36);
+            this.ExitButton.TabIndex = 8;
+            this.ExitButton.Text = "Exit Game";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // BtnInstructions
+            // 
+            this.BtnInstructions.Font = new System.Drawing.Font("SimSun", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInstructions.ForeColor = System.Drawing.Color.Black;
+            this.BtnInstructions.Location = new System.Drawing.Point(729, 646);
+            this.BtnInstructions.Name = "BtnInstructions";
+            this.BtnInstructions.Size = new System.Drawing.Size(123, 36);
+            this.BtnInstructions.TabIndex = 9;
+            this.BtnInstructions.Text = "Instructions";
+            this.BtnInstructions.UseVisualStyleBackColor = true;
+            this.BtnInstructions.Click += new System.EventHandler(this.BtnInstructions_Click);
+            // 
+            // LblName
+            // 
+            this.LblName.AutoSize = true;
+            this.LblName.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblName.Location = new System.Drawing.Point(766, 445);
+            this.LblName.Name = "LblName";
+            this.LblName.Size = new System.Drawing.Size(44, 16);
+            this.LblName.TabIndex = 10;
+            this.LblName.Text = "Name";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 711);
+            this.Controls.Add(this.LblName);
+            this.Controls.Add(this.BtnInstructions);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.ButtonPause);
             this.Controls.Add(this.finish);
             this.Controls.Add(this.TxtName);
@@ -203,6 +243,9 @@ namespace COS_Assesment
         private System.Windows.Forms.Button finish;
         private System.Windows.Forms.ListBox ListBoxHighScores;
         private System.Windows.Forms.Button ButtonPause;
+        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button BtnInstructions;
+        private System.Windows.Forms.Label LblName;
     }
 }
 
