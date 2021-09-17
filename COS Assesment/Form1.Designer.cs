@@ -220,7 +220,7 @@ namespace COS_Assesment
             this.Controls.Add(this.PicDice);
             this.Controls.Add(this.mainPnl);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Snakes And Ladders";
             ((System.ComponentModel.ISupportInitialize)(this.PicHeader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice)).EndInit();
             this.mainPnl.ResumeLayout(false);
