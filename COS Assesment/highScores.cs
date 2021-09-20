@@ -15,13 +15,13 @@ namespace COS_Assesment
     {
         public void updateHighScores(string name, int seconds)
         {
-            ListBoxHighScores.Visible = true;
+            ListBoxHighScores.Visible = true; //shows scoreboard once it has been updated.
             StreamWriter writer;
             StreamReader reader;
 
             string binPath = "";
 
-            binPath = Application.StartupPath + @"\highscores.txt";
+            binPath = Application.StartupPath + @"\highscores.txt"; //location of txt file to write to.
 
             // declare list of high scores
             List<(string, int)> highScores = new List<(string, int)>();
